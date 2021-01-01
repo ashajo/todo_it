@@ -22,4 +22,12 @@ public class Todo {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public boolean isDone() {
+        return false;
+    }
+
+    public Person getassignee() {
+        return null;
+    }
 }

@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class TodoItems {
     private static Todo[] Todos = {};
+    private Todo[] todos;
 
     public int size(){
         return Todos.length;
@@ -34,5 +35,27 @@ public class TodoItems {
     public void clear(){
         Todos = new Todo[0];
         PersonSequencer.reset();
+    }
+
+    public Todo findByDoneStatus(boolean doneStatus){
+        for (int i =0; i < todos.length; i++){
+            if(todos[i].isDone() == doneStatus){
+                return todos[i];
+            }
+        }
+        return findByDoneStatus(doneStatus);
+    }
+    public Todo [] findByAssignee(Person assignee) {
+        for (int i = 0; i < size(); i++) {
+            if (todos[i].getassignee() == assignee) {
+                return todos;
+            }
+        }
+        return  findByAssignee(assignee);
+
+
+    }
+    public Todo[] findUnassignedTodoItems() {
+        return todos;
     }
 }
