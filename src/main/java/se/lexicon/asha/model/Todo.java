@@ -6,7 +6,7 @@ public class Todo {
     private boolean done;
     private Person assignee;
 
-    public Todo(int todoId, String description) {
+    public Todo(int todoId, String firstName, String description) {
         this.todoId = todoId;
         this.description = description;
     }
